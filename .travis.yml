@@ -9,7 +9,6 @@ before_script:
   - php composer.phar install --dev
 
 script:
-  - test ${TRAVIS_PHP_VERSION} != '5.3' && ./vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/
   - phpunit
 
 notifications:
