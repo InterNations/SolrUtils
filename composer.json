@@ -1,0 +1,19 @@
+{
+    "name": "internations/solr-utils",
+    "description": "Solr/Lucene utilities for PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lars Strojny",
+            "email": "lars.strojny@internations.org"
+        }
+    ],
+    "require-dev": {
+        "internations/kodierungsregelwerksammlung": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "InterNations\\Component\\Solr\\Util": "src/"
+        }
+    }
+}
