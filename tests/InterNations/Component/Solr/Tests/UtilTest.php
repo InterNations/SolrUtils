@@ -19,14 +19,14 @@ class UtilTest extends TestCase
         $list = array_filter($list);
         array_unique($list);
 
-        return array_map(static function ($c) {return [$c];}, $list);
+        return array_map(static function ($c) {return array($c);}, $list);
     }
 
     public function getEscapingStrings()
     {
-        return [
-            ['\\foo\\bar"', '\\\\foo\\\\bar\\"'],
-        ];
+        return array(
+            array('\\foo\\bar"', '\\\\foo\\\\bar\\"'),
+        );
     }
 
     /** @dataProvider getChars */

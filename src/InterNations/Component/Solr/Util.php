@@ -8,7 +8,7 @@ final class Util
     /**
      * @var array
      */
-    private static $search = [
+    private static $search = array(
         '\\',
         '+',
         '-',
@@ -28,12 +28,12 @@ final class Util
         '?',
         ':',
         '/',
-    ];
+    );
 
      /**
      * @var array
      */
-    private static $replace = [
+    private static $replace = array(
         '\\\\',
         '\+',
         '\-',
@@ -53,7 +53,7 @@ final class Util
         '\?',
         '\:',
         '\/',
-    ];
+    );
 
     /**
      * Quote a given string
