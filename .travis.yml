@@ -9,8 +9,7 @@ before_script:
   - php composer.phar install --dev
 
 script:
-  - env
-  - ./vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/
+  - php -r 'if (version_compare(PHP_VERSION, "5.4.0", "<")) exit(1);' && ./vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/ || true
   - phpunit
 
 notifications:
