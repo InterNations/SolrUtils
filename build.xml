@@ -22,7 +22,7 @@
     </target>
 
     <target name="phpcs">
-         <exec executable="./vendor/bin/phpcs" failonerror="true">
+         <exec executable="./vendor/bin/phpcs">
             <arg value="--standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml"/>
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
