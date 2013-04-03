@@ -19,7 +19,12 @@ class UtilTest extends TestCase
         $list = array_filter($list);
         array_unique($list);
 
-        return array_map(static function ($c) {return array($c);}, $list);
+        return array_map(array($this, 'wrap'), $list);
+    }
+
+    public function wrap($char)
+    {
+        return array($char);
     }
 
     public function getEscapingStrings()
