@@ -1,8 +1,6 @@
 <?php
 namespace InterNations\Component\Solr;
 
-use InterNations\Component\Solr\Expression\Expression;
-
 final class Util
 {
     /**
@@ -59,11 +57,11 @@ final class Util
      * Quote a given string
      *
      * @param mixed $value
-     * @return string|Expression
+     * @return string|ExpressionInterface
      */
     public static function quote($value)
     {
-        if ($value instanceof Expression) {
+        if ($value instanceof ExpressionInterface) {
             return $value;
         }
 
@@ -76,7 +74,7 @@ final class Util
      * Puts quotes around a string, treats everything else as a term
      *
      * @param mixed $value
-     * @return string|Expression
+     * @return string|ExpressionInterface
      */
     public static function sanitize($value)
     {
@@ -97,9 +95,10 @@ final class Util
             if (!$precision) {
                 $precision = ini_get('precision');
             }
+
             return number_format($value, $precision, '.', '');
 
-        } elseif ($value instanceof Expression) {
+        } elseif ($value instanceof ExpressionInterface) {
             return $value;
 
         } elseif (empty($value)) {
@@ -111,11 +110,11 @@ final class Util
      * Escape a string to be safe for Solr queries
      *
      * @param mixed $value
-     * @return string|Expression
+     * @return string|ExpressionInterface
      */
     public static function escape($value)
     {
-        if ($value instanceof Expression) {
+        if ($value instanceof ExpressionInterface) {
             return $value;
         }
 

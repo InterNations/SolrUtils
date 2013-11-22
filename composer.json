@@ -14,7 +14,8 @@
     },
     "autoload": {
         "psr-0": {
-            "InterNations\\Component\\Solr\\Util": "src/"
+            "InterNations\\Component\\Solr\\Util": "src/",
+            "InterNations\\Component\\Solr\\ExpressionInterface": "src/"
         }
     },
     "extra": {

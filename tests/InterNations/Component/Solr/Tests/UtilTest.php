@@ -1,8 +1,22 @@
 <?php
 namespace InterNations\Component\Solr\Tests;
 
+use InterNations\Component\Solr\ExpressionInterface;
 use InterNations\Component\Solr\Util;
 use PHPUnit_Framework_TestCase as TestCase;
+
+class TestExpression implements ExpressionInterface
+{
+    public function isEqual($expr)
+    {
+        return true;
+    }
+
+    public function __toString()
+    {
+        return '(fixed)';
+    }
+}
 
 class UtilTest extends TestCase
 {
@@ -84,5 +98,13 @@ class UtilTest extends TestCase
     public function testVariousEscaping($input, $output)
     {
         $this->assertSame($output, Util::escape($input));
+    }
+
+    public function testExpressionsAreNotTouched()
+    {
+        $expression = new TestExpression();
+        $this->assertSame($expression, Util::escape($expression));
+        $this->assertSame($expression, Util::sanitize($expression));
+        $this->assertSame($expression, Util::quote($expression));
     }
 }
