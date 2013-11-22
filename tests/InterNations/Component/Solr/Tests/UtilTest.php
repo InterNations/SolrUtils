@@ -7,7 +7,7 @@ use PHPUnit_Framework_TestCase as TestCase;
 class UtilTest extends TestCase
 {
     /**
-     * @see http://lucene.apache.org/core/4_0_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html
+     * @see http://lucene.apache.org/core/4_5_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html
      * @var string
      */
     private static $charList = '+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /';
