@@ -6,12 +6,12 @@ php:
   - hhvm
 
 before_script:
-  - wget http://getcomposer.org/composer.phar
-  - php composer.phar install --dev
+  - composer install --dev
   - sed -i '/ShortArraySyntaxSniff/d' vendor/internations/kodierungsregelwerksammlung/ruleset.xml
   - find vendor/internations/kodierungsregelwerksammlung/ -name "ShortArraySyntaxSniff.php" -exec rm {} \;
 
 script:
+  - sh -c '[ "$TRAVIS_PHP_VERSION" != "hhvm" ] && ./vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/'
   - phpunit
 
 notifications:
