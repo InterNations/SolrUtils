@@ -91,7 +91,7 @@ class UtilTest extends TestCase
 
     public function testSanitizing_ScientificNotationDoesNotIntroduceMinusChar()
     {
-        $this->assertSame('0.00002100000000', Util::sanitize(2.1E-5));
+        $this->assertEquals('0.00002100000000', Util::sanitize(2.1E-5), null, 0.0000000001);
     }
 
     /** @dataProvider getEscapingStrings */
