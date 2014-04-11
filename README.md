@@ -1,4 +1,4 @@
-# SolrUtils [![Build Status](https://travis-ci.org/InterNations/SolrUtils.svg)](https://travis-ci.org/InterNations/SolrUtils)
+# SolrUtils [![Build Status](https://travis-ci.org/InterNations/SolrUtils.svg)](https://travis-ci.org/InterNations/SolrUtils) [![Dependency Status](https://www.versioneye.com/user/projects/5347af3ffe0d072109000231/badge.png)](https://www.versioneye.com/user/projects/5347af3ffe0d072109000231)
 
 `SolrUtils` help with recurring tasks when working with Solr like escaping and sanitizing user input.
 
