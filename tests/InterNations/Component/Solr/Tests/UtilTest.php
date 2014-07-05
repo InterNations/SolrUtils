@@ -91,7 +91,11 @@ class UtilTest extends TestCase
 
     public function testSanitizing_ScientificNotationDoesNotIntroduceMinusChar()
     {
-        $this->assertEquals('0.00002100000000', Util::sanitize(2.1E-5), null, 0.000001);
+        if (PHP_EXTRA_VERSION === 'hhvm') {
+            $this->assertSame('0.00002099999992', Util::sanitize(2.1E-5));
+        } else {
+            $this->assertSame('0.00002100000000', Util::sanitize(2.1E-5));
+        }
     }
 
     /** @dataProvider getEscapingStrings */
