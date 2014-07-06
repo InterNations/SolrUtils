@@ -3,9 +3,7 @@ namespace InterNations\Component\Solr;
 
 final class Util
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     private static $search = array(
         '\\',
         '+',
@@ -28,9 +26,7 @@ final class Util
         '/',
     );
 
-     /**
-     * @var array
-     */
+    /** * @var array */
     private static $replace = array(
         '\\\\',
         '\+',
@@ -83,9 +79,8 @@ final class Util
         if ($type === 'string') {
             if ($value !== '') {
                 return '"' . str_replace(static::$search, static::$replace, $value) . '"';
-            } else {
-                return $value;
             }
+            return $value;
 
         } elseif ($type === 'integer') {
             return (string) $value;
@@ -97,6 +92,9 @@ final class Util
             }
 
             return number_format($value, $precision, '.', '');
+
+        } elseif ($type == 'boolean') {
+            return $value ? 'true' : 'false';
 
         } elseif ($value instanceof ExpressionInterface) {
             return $value;

@@ -21,7 +21,7 @@ class TestExpression implements ExpressionInterface
 class UtilTest extends TestCase
 {
     /**
-     * @see http://lucene.apache.org/core/4_5_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html
+     * @see http://lucene.apache.org/core/4_9_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html
      * @var string
      */
     private static $charList = '+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /';
@@ -45,6 +45,7 @@ class UtilTest extends TestCase
     {
         return array(
             array('\\foo\\bar"', '\\\\foo\\\\bar\\"'),
+            array('"foo"', '\"foo\"'),
         );
     }
 
@@ -74,8 +75,20 @@ class UtilTest extends TestCase
     public function testSanitize_Empty()
     {
         $this->assertSame('', Util::sanitize(''));
-        $this->assertSame('', Util::sanitize(false));
         $this->assertSame('', Util::sanitize(null));
+    }
+
+    public function testSanitize_Bool()
+    {
+        $this->assertSame('false', Util::sanitize(false));
+        $this->assertSame('true', Util::sanitize(true));
+    }
+
+    public function testSanitize_Integer()
+    {
+        $this->assertSame('0', Util::sanitize(0));
+        $this->assertSame('100', Util::sanitize(100));
+        $this->assertSame('9223372036854775808.00000000000000', Util::sanitize(PHP_INT_MAX + 1));
     }
 
     public function testSanitize_Float()
@@ -91,7 +104,7 @@ class UtilTest extends TestCase
 
     public function testSanitizing_ScientificNotationDoesNotIntroduceMinusChar()
     {
-        if (strpos(PHP_VERSION, 'hiphop') !== false) {
+        if (substr(PHP_VERSION, -6) === 'hiphop') {
             $this->assertSame('0.00002099999992', Util::sanitize(2.1E-5));
         } else {
             $this->assertSame('0.00002100000000', Util::sanitize(2.1E-5));
