@@ -1,4 +1,5 @@
-# SolrUtils [![Build Status](https://travis-ci.org/InterNations/SolrUtils.svg)](https://travis-ci.org/InterNations/SolrUtils) [![Dependency Status](https://www.versioneye.com/user/projects/5347af3ffe0d072109000231/badge.png)](https://www.versioneye.com/user/projects/5347af3ffe0d072109000231)
+# SolrUtils
+[![Build Status](https://travis-ci.org/InterNations/SolrUtils.svg)](https://travis-ci.org/InterNations/SolrUtils) [![Dependency Status](https://www.versioneye.com/user/projects/5347af3ffe0d072109000231/badge.png)](https://www.versioneye.com/user/projects/5347af3ffe0d072109000231) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/InterNations/SolrUtils.svg)](http://isitmaintained.com/project/InterNations/SolrUtils "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/InterNations/SolrUtils.svg)](http://isitmaintained.com/project/InterNations/SolrUtils "Percentage of issues still open")
 
 `SolrUtils` help with recurring tasks when working with Solr like escaping and sanitizing user input.
 
