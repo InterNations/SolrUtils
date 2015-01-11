@@ -18,3 +18,7 @@ cache:
 script:
   - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" && "$TRAVIS_PHP_VERSION" != "5.3" ] ; then ./vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/ ; fi'
   - phpunit
+
+matrix:
+  allow_failures:
+    - php: hhvm
