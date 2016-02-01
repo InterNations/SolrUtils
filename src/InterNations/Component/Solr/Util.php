@@ -4,7 +4,7 @@ namespace InterNations\Component\Solr;
 final class Util
 {
     /** @var array */
-    private static $search = array(
+    private static $search = [
         '\\',
         '+',
         '-',
@@ -24,10 +24,10 @@ final class Util
         '?',
         ':',
         '/',
-    );
+    ];
 
     /** * @var array */
-    private static $replace = array(
+    private static $replace = [
         '\\\\',
         '\+',
         '\-',
@@ -47,7 +47,7 @@ final class Util
         '\?',
         '\:',
         '\/',
-    );
+    ];
 
     /**
      * Quote a given string

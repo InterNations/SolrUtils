@@ -33,20 +33,20 @@ class UtilTest extends TestCase
         $list = array_filter($list);
         array_unique($list);
 
-        return array_map(array($this, 'wrap'), $list);
+        return array_map([$this, 'wrap'], $list);
     }
 
     public function wrap($char)
     {
-        return array($char);
+        return [$char];
     }
 
     public function getEscapingStrings()
     {
-        return array(
-            array('\\foo\\bar"', '\\\\foo\\\\bar\\"'),
-            array('"foo"', '\"foo\"'),
-        );
+        return [
+            ['\\foo\\bar"', '\\\\foo\\\\bar\\"'],
+            ['"foo"', '\"foo\"'],
+        ];
     }
 
     /** @dataProvider getChars */
