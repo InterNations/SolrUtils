@@ -10,7 +10,7 @@
     ],
     "require-dev": {
         "internations/kodierungsregelwerksammlung": "dev-master",
-        "phpunit/phpunit": "~4"
+        "phpunit/phpunit": "~5|~4"
     },
     "autoload": {
         "psr-0": {
