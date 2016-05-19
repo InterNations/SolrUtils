@@ -80,6 +80,7 @@ final class Util
             if ($value !== '') {
                 return '"' . str_replace(static::$search, static::$replace, $value) . '"';
             }
+
             return $value;
 
         } elseif ($type === 'integer') {
@@ -87,6 +88,7 @@ final class Util
 
         } elseif ($type === 'double') {
             static $precision;
+
             if (!$precision) {
                 $precision = substr(PHP_VERSION, -6) === 'hiphop' ? 14 : ini_get('precision');
             }
