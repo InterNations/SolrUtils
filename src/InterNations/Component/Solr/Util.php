@@ -93,7 +93,7 @@ final class Util
         } elseif ($type === 'double') {
             static $precision;
             if (!$precision) {
-                $precision = ini_get('precision');
+                $precision = defined('HHVM_VERSION') ? 14 : ini_get('precision');
             }
 
             return number_format($value, $precision, '.', '');

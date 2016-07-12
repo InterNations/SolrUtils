@@ -74,7 +74,6 @@ class UtilTest extends TestCase
     public function testSanitize_Empty()
     {
         $this->assertSame('', Util::sanitize(''));
-        $this->assertSame('', Util::sanitize(false));
         $this->assertSame('', Util::sanitize(null));
     }
 
