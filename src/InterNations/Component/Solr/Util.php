@@ -90,7 +90,7 @@ final class Util
             static $precision;
 
             if (!$precision) {
-                $precision = substr(PHP_VERSION, -6) === 'hiphop' ? 14 : ini_get('precision');
+                $precision = defined('HHVM_VERSION') ? 14 : ini_get('precision');
             }
 
             return number_format($value, $precision, '.', '');
