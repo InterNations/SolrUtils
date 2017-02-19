@@ -3,7 +3,7 @@ namespace InterNations\Component\Solr\Tests;
 
 use InterNations\Component\Solr\ExpressionInterface;
 use InterNations\Component\Solr\Util;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 class TestExpression implements ExpressionInterface
 {
