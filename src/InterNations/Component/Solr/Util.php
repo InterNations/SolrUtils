@@ -82,11 +82,13 @@ final class Util
             }
 
             return $value;
+        }
 
-        } elseif ($type === 'integer') {
+        if ($type === 'integer') {
             return (string) $value;
+        }
 
-        } elseif ($type === 'double') {
+        if ($type === 'double') {
             static $precision;
 
             if (!$precision) {
@@ -94,14 +96,17 @@ final class Util
             }
 
             return number_format($value, $precision, '.', '');
+        }
 
-        } elseif ($type == 'boolean') {
+        if ($type === 'boolean') {
             return $value ? 'true' : 'false';
+        }
 
-        } elseif ($value instanceof ExpressionInterface) {
+        if ($value instanceof ExpressionInterface) {
             return $value;
+        }
 
-        } elseif (empty($value)) {
+        if (empty($value)) {
             return '';
         }
     }

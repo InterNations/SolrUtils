@@ -7,12 +7,12 @@ use PHPUnit\Framework\TestCase;
 
 class TestExpression implements ExpressionInterface
 {
-    public function isEqual($expr)
+    public function isEqual(string $expr): bool
     {
         return true;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return '(fixed)';
     }
