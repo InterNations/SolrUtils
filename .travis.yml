@@ -4,16 +4,14 @@ php:
   - 7.2
   - 7.3
   - nightly
-  - hhvm
 
 matrix:
   allow_failures:
-    - php: hhvm
     - php: nightly
 
 before_script:
   - composer install
 
 script:
-  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" && "$TRAVIS_PHP_VERSION" != "5.3" ] ; then ./vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/ ; fi'
-  - phpunit
+  - vendor/bin/phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/
+  - vendor/bin/phpunit
