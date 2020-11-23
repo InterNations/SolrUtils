@@ -13,12 +13,16 @@
     },
     "require-dev": {
         "internations/kodierungsregelwerksammlung": "^0.35.0",
-        "phpunit/phpunit": "~6"
+        "phpunit/phpunit": "~7"
     },
     "autoload": {
-        "psr-0": {
-            "InterNations\\Component\\Solr\\Util": "src/",
-            "InterNations\\Component\\Solr\\ExpressionInterface": "src/"
+        "psr-4": {
+            "InterNations\\Component\\Solr\\": "src/InterNations/Component/Solr/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InterNations\\Component\\Solr\\Tests\\": "tests/InterNations/Component/Solr/"
         }
     },
     "extra": {
