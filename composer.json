@@ -8,6 +8,10 @@
             "email": "lars.strojny@internations.org"
         }
     ],
+    "scripts": {
+        "tests": "phpunit",
+        "coding-style": "phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/"
+    },
     "require": {
         "php": "~7.1"
     },
