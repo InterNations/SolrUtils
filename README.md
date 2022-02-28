@@ -1,6 +1,6 @@
 # SolrUtils
 
-[![Build Status](https://travis-ci.org/InterNations/SolrUtils.svg)](https://travis-ci.org/InterNations/SolrUtils)
+[![Test](https://github.com/InterNations/SolrUtils/actions/workflows/tests.yaml/badge.svg)](https://github.com/InterNations/SolrUtils/actions/workflows/tests.yaml)
 
 `SolrUtils` help with recurring tasks when working with Solr like escaping and sanitizing user input.
 
