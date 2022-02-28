@@ -4,8 +4,14 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Malvika Chauhan",
+            "email": "malvika.chauhan@internations.org",
+            "role": "Maintainer"
+        },
+        {
             "name": "Lars Strojny",
-            "email": "lars.strojny@internations.org"
+            "email": "lars.strojny@internations.org",
+            "role": "Contributor"
         }
     ],
     "scripts": {
