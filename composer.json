@@ -13,7 +13,7 @@
         "coding-style": "phpcs --standard=vendor/internations/kodierungsregelwerksammlung/ruleset.xml ./src/"
     },
     "require": {
-        "php": "~7.1"
+        "php": ">=7.1.3"
     },
     "require-dev": {
         "internations/kodierungsregelwerksammlung": "^0.35.0",
