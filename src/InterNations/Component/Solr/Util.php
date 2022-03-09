@@ -54,6 +54,7 @@ final class Util
      *
      * @param mixed $value
      * @return string|ExpressionInterface
+     * @no-named-arguments
      */
     public static function quote($value)
     {
@@ -71,6 +72,7 @@ final class Util
      *
      * @param mixed $value
      * @return string|ExpressionInterface
+     * @no-named-arguments
      */
     public static function sanitize($value)
     {
@@ -116,6 +118,7 @@ final class Util
      *
      * @param mixed $value
      * @return string|ExpressionInterface
+     * @no-named-arguments
      */
     public static function escape($value)
     {
