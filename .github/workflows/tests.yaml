@@ -40,3 +40,6 @@ jobs:
 
       - name: Check coding style
         run: composer coding-style
+
+      - name: Check backward compatibility
+        run: composer backward-compatibility-check
