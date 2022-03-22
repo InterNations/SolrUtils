@@ -45,3 +45,4 @@ jobs:
 
       - name: Check backward compatibility
         run: composer backward-compatibility-check
+        if: matrix.php-version >= 7.4
