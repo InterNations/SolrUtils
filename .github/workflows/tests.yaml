@@ -40,9 +40,11 @@ jobs:
 
       - name: Run Tests
         run: composer tests
+        if: matrix.php-version > 7.1
 
       - name: Check coding style
         run: composer coding-style
+        if: matrix.php-version > 7.1
 
       - name: Check backward compatibility
         run: composer backward-compatibility-check
