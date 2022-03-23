@@ -36,6 +36,7 @@ jobs:
         uses: ramsey/composer-install@v1
         with:
           composer-options: --prefer-dist
+        if: matrix.php-version == 7.1
 
       - name: Run Tests
         run: composer tests
