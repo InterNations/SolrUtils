@@ -36,12 +36,15 @@ jobs:
         uses: ramsey/composer-install@v1
         with:
           composer-options: --prefer-dist
+        if: matrix.php-version > 7.1
 
       - name: Run Tests
         run: composer tests
+        if: matrix.php-version > 7.1
 
       - name: Check coding style
         run: composer coding-style
+        if: matrix.php-version > 7.1
 
   bc-checker:
     name: PHP ${{ matrix.php-version }}
