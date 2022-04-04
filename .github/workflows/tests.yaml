@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   test:
-    name: PHP ${{ matrix.php-version }}
+    name: PHP ${{ matrix.php-version }} test
 
     runs-on: ubuntu-18.04
 
@@ -47,7 +47,7 @@ jobs:
         if: matrix.php-version > 7.1
 
   bc-checker:
-    name: PHP ${{ matrix.php-version }}
+    name: PHP ${{ matrix.php-version }} bc-checker
 
     runs-on: ubuntu-18.04
 
