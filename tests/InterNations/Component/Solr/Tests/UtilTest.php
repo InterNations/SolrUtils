@@ -22,9 +22,8 @@ class UtilTest extends TestCase
 {
     /**
      * @see http://lucene.apache.org/core/4_9_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html
-     * @var string
      */
-    private static $charList = '+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /';
+    private static string $charList = '+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /';
 
     public function getChars()
     {
@@ -41,7 +40,8 @@ class UtilTest extends TestCase
         return [$char];
     }
 
-    public function getEscapingStrings()
+	/** @return string[][] */
+    public function getEscapingStrings(): array
     {
         return [
             ['\\foo\\bar"', '\\\\foo\\\\bar\\"'],
@@ -50,70 +50,70 @@ class UtilTest extends TestCase
     }
 
     /** @dataProvider getChars */
-    public function testEscaping($char)
+    public function testEscaping($char): void
     {
         $this->assertSame('\\' . $char, Util::escape($char));
     }
 
     /** @dataProvider getChars */
-    public function testQuoting($char)
+    public function testQuoting($char): void
     {
         $this->assertSame('"\\' . $char . '"', Util::quote($char));
     }
 
     /** @dataProvider getChars */
-    public function testSanitizing($char)
+    public function testSanitizing($char): void
     {
         $this->assertSame('"\\' . $char . '"', Util::sanitize($char));
     }
 
-    public function testSanitize_Int()
+    public function testSanitize_Int(): void
     {
         $this->assertSame('1', Util::sanitize(1));
     }
 
-    public function testSanitize_Empty()
+    public function testSanitize_Empty(): void
     {
         $this->assertSame('', Util::sanitize(''));
         $this->assertSame('', Util::sanitize(null));
     }
 
-    public function testSanitize_Bool()
+    public function testSanitize_Bool(): void
     {
         $this->assertSame('false', Util::sanitize(false));
         $this->assertSame('true', Util::sanitize(true));
     }
 
-    public function testSanitize_Integer()
+    public function testSanitize_Integer(): void
     {
         $this->assertSame('0', Util::sanitize(0));
         $this->assertSame('100', Util::sanitize(100));
         $this->assertSame('9223372036854775808.00000000000000', Util::sanitize(PHP_INT_MAX + 1));
     }
 
-    public function testSanitize_Float()
+    public function testSanitize_Float(): void
     {
         $this->assertSame('1000.00000000000000', Util::sanitize(1000.0));
     }
 
-    public function testSanitize_NumericString()
+    public function testSanitize_NumericString(): void
     {
         $this->assertSame('"\+1122"', Util::sanitize('+1122'));
         $this->assertSame('"\-1122"', Util::sanitize('-1122'));
     }
 
-    public function testSanitizing_ScientificNotationDoesNotIntroduceMinusChar()
+    public function testSanitizing_ScientificNotationDoesNotIntroduceMinusChar(): void
     {
         $this->assertSame('0.00002100000000', Util::sanitize(2.1E-5));
     }
 
     /** @dataProvider getEscapingStrings */
-    public function testVariousEscaping($input, $output)
+    public function testVariousEscaping($input, $output): void
     {
         $this->assertSame($output, Util::escape($input));
     }
 
-    public function testExpressionsAreNotTouched()
+    public function testExpressionsAreNotTouched(): void
     {
         $expression = new TestExpression();
         $this->assertSame($expression, Util::escape($expression));
